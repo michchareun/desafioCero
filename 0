@@ -1,0 +1,112 @@
+const jugadorUno = {
+  nombre: "Marce",
+  habilidades: {
+    ataque: 70,
+    velocidad: 30,
+    vida: 60,
+    magia: 120,
+  },
+  articulos: ["espada", "escudo", "varita"],
+};
+
+const jugadorDos = {
+  nombre: "Flor",
+  habilidades: {
+    ataque: 73,
+    velocidad: 30,
+    vida: 80,
+    magia: 100,
+  },
+  articulos: ["escudo", "varita", "capa", "pocion"],
+};
+
+var contadorPuntosJug1 = 0;
+var contadorPuntosJug2 = 0;
+
+var ganador;
+
+if (jugadorUno.habilidades.ataque > jugadorDos.habilidades.ataque) {
+  contadorPuntosJug1++;
+} else if (jugadorUno.habilidades.ataque < jugadorDos.habilidades.ataque) {
+  contadorPuntosJug2++;
+} else {
+  contadorPuntosJug1++;
+  contadorPuntosJug2++;
+}
+
+if (jugadorUno.habilidades.velocidad > jugadorDos.habilidades.velocidad) {
+  contadorPuntosJug1++;
+} else if (jugadorUno.habilidades.velocidad < jugadorDos.habilidades.velocidad) {
+  contadorPuntosJug2++;
+} else {
+  contadorPuntosJug1++;
+  contadorPuntosJug2++;
+}
+
+if (jugadorUno.habilidades.vida > jugadorDos.habilidades.vida) {
+  contadorPuntosJug1++;
+} else if (jugadorUno.habilidades.vida < jugadorDos.habilidades.vida) {
+  contadorPuntosJug2++;
+} else {
+  contadorPuntosJug1++;
+  contadorPuntosJug2++;
+}
+
+if (jugadorUno.habilidades.magia > jugadorDos.habilidades.magia) {
+  contadorPuntosJug1++;
+} else if (jugadorUno.habilidades.magia < jugadorDos.habilidades.magia) {
+  contadorPuntosJug2++;
+} else {
+  contadorPuntosJug1++;
+  contadorPuntosJug2++;
+}
+
+console.log("-----")
+console.log("El jugador Uno suma: " + contadorPuntosJug1 + " puntos." +
+  " El jugador Dos suma: "
+  + contadorPuntosJug2 + " puntos.")
+if (contadorPuntosJug1 > contadorPuntosJug2) {
+  console.log("El ganador en Habilidades es el Jugador Uno.")
+} else {
+  console.log("El ganador en Habilidades es el Jugador Dos.")
+    ;
+}
+
+let cantidadArticuloUno = jugadorUno.articulos.length;
+let cantidadArticuloDos = jugadorDos.articulos.length;
+
+if (cantidadArticuloUno > cantidadArticuloDos) {
+  contadorPuntosJug1++;
+} else if (cantidadArticuloUno < cantidadArticuloDos) {
+  contadorPuntosJug2++;
+} else {
+  contadorPuntosJug1++;
+  contadorPuntosJug2++;
+}
+
+console.log("-----")
+console.log("El jugador Uno suma: " + contadorPuntosJug1 +
+  " El jugador Dos suma: "
+  + contadorPuntosJug2)
+
+if (cantidadArticuloUno > cantidadArticuloDos) {
+  console.log("El ganador en números de artículos es el Jugador Uno.")
+} else {
+  console.log("El ganador en números de artículos es el Jugador Dos.")
+    ;
+}
+
+console.log("-----")
+
+const resultado = {
+  [jugadorUno]: "El Jugador Uno hizo: " + contadorPuntosJug1 + " puntos.",
+  [jugadorDos]: "El Jugador Dos hizo: " + contadorPuntosJug2 + " puntos.",
+  ganador: jugadorDos,
+};
+
+console.log("Resultados:");
+console.log(resultado[jugadorUno]);
+console.log(resultado[jugadorDos]);
+console.log("----")
+console.log("El ganador del juego es:")
+console.log(resultado.ganador);
